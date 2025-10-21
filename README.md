@@ -1,4 +1,4 @@
-# ui-scaler
+# box3-ui-scaler
 
 神岛轻量级UI缩放工具，支持神岛UI节点位置、尺寸和文本属性的智能等比缩放。用于pc端/移动端UI界面适配
 
@@ -17,18 +17,6 @@
 
 ```bash
 npm install ui-scaler
-```
-
-### yarn 安装
-
-```bash
-yarn add ui-scaler
-```
-
-### pnpm 安装
-
-```bash
-pnpm add ui-scaler
 ```
 
 ## 🚀 使用方法
@@ -78,7 +66,7 @@ scaler.scaleUI(uiTree);
 
 #### 1. 下载源文件
 
-从 [GitHub](https://github.com/yourusername/ui-scaler) 下载 `src/UiScaler.js` 文件到你的项目中。
+下载 `src/UiScaler.js` 文件到你的项目中。
 
 #### 2. 直接引入使用
 
@@ -161,55 +149,18 @@ new UiScaler(ratio: number)
 
 **返回值:** 无（直接修改传入的对象）
 
-## 🎯 UI节点结构
-
-UI节点应符合以下结构：
-
-```javascript
-{
-  name: string,              // 节点名称（可选）
-  position: {
-    offset: {
-      x: number,            // X坐标
-      y: number             // Y坐标
-    }
-  },
-  size: {
-    offset: {
-      x: number,            // 宽度
-      y: number             // 高度
-    }
-  },
-  textFontSize?: number,    // 文字大小（可选）
-  textLineHeight?: number,  // 行高（可选）
-  textStrokeThickness?: number, // 描边粗细（可选）
-  children?: Array          // 子节点数组（可选）
-}
-```
-
 ## 💡 使用示例
 
 ### 响应式适配
 
 ```javascript
-import { UiScaler } from 'ui-scaler';
-
-// 设计稿尺寸
-const DESIGN_WIDTH = 1920;
-const DESIGN_HEIGHT = 1080;
-
-// 获取实际屏幕尺寸
-const screenWidth = window.innerWidth;
-const screenHeight = window.innerHeight;
-
-// 计算缩放比例（以宽度为准）
-const ratio = screenWidth / DESIGN_WIDTH;
-
-// 创建缩放器
-const scaler = new UiScaler(ratio);
-
-// 应用到你的UI树
-scaler.scaleUI(yourUITree);
+const scaler = new UiScaler(this.screenScaleRatio);
+// 缩放并对齐windowMiddleAnchor下树形ui
+const windowAnchorMiddle = uiScreen.uiBox_windowAnchorMiddle as unknown as UiNode;
+if (windowAnchorMiddle) {
+    console.log('Scaling windowAnchorMiddle and its children');
+    scaler.scaleUI(windowAnchorMiddle);
+}
 ```
 
 ### 动态缩放
@@ -236,32 +187,7 @@ function handleResize() {
 window.addEventListener('resize', handleResize);
 ```
 
-### 与游戏引擎集成
-
-```javascript
-import { UiScaler } from 'ui-scaler';
-
-class GameUI {
-  constructor(gameWidth, gameHeight) {
-    this.designWidth = 1920;
-    this.designHeight = 1080;
-    this.ratio = Math.min(
-      gameWidth / this.designWidth,
-      gameHeight / this.designHeight
-    );
-    this.scaler = new UiScaler(this.ratio);
-  }
-
-  loadUI(uiData) {
-    // 克隆原始数据以保持原始值不变
-    const scaledUI = JSON.parse(JSON.stringify(uiData));
-    this.scaler.scaleUI(scaledUI);
-    return scaledUI;
-  }
-}
-```
-
-## ⚙️ 工作原理
+### ⚙️ 工作原理
 
 `ui-scaler` 采用智能的等比缩放算法：
 
@@ -282,22 +208,3 @@ npm run dev
 # 构建
 npm run build
 ```
-
-## 📄 许可证
-
-MIT License
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
-## 📮 联系方式
-
-如有问题或建议，请通过以下方式联系：
-
-- Issue: [GitHub Issues](https://github.com/yourusername/ui-scaler/issues)
-- Email: your.email@example.com
-
----
-
-**注意**: 请将 `yourusername` 替换为你的实际 GitHub 用户名，将邮箱替换为你的实际联系邮箱。
