@@ -1,7 +1,7 @@
 {
-  "name": "ui-scaler",
+  "name": "box3-ui-scaler",
   "version": "1.0.0",
-  "description": "轻量级UI缩放工具 - 支持位置、尺寸和文本属性的智能等比缩放",
+  "description": "神岛轻量级UI缩放工具 - 支持神岛UI节点位置、尺寸和文本属性的智能等比缩放，用于pc端/移动端UI界面适配",
   "type": "module",
   "main": "dist/UiScaler.js",
   "module": "dist/UiScaler.esm.js",
@@ -30,12 +30,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ui-scaler.git"
+    "url": "https://github.com/Fellsoul/box3-ui-scaler.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/ui-scaler/issues"
+    "url": "https://github.com/Fellsoul/box3-ui-scaler/issues"
   },
-  "homepage": "https://github.com/yourusername/ui-scaler#readme",
+  "homepage": "https://github.com/Fellsoul/box3-ui-scaler#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
     "rollup": "^4.9.0"
