@@ -1,0 +1,43 @@
+{
+  "name": "ui-scaler",
+  "version": "1.0.0",
+  "description": "轻量级UI缩放工具 - 支持位置、尺寸和文本属性的智能等比缩放",
+  "type": "module",
+  "main": "dist/UiScaler.js",
+  "module": "dist/UiScaler.esm.js",
+  "types": "dist/UiScaler.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ui",
+    "scaler",
+    "layout",
+    "responsive",
+    "scaling",
+    "ui-scaling",
+    "proportional-scaling",
+    "adaptive-ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ui-scaler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ui-scaler/issues"
+  },
+  "homepage": "https://github.com/yourusername/ui-scaler#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.9.0"
+  }
+}

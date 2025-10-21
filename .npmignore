@@ -1,0 +1,16 @@
+# 源文件和开发文件不发布到 npm
+src/
+example/
+test.js
+rollup.config.js
+
+# 文档保留
+# README.md
+# USAGE.md
+
+# 开发文档不发布
+BUILD_SUMMARY.md
+
+# 开发依赖
+node_modules/
+.gitignore
